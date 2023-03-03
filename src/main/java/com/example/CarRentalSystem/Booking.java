@@ -12,10 +12,13 @@ public class Booking {
 
     @Id
     @Column
-    private int booking_id;
+    private Integer booking_id;
     @Column  private String  booking_date;
+    @Column private Integer  driver_time;
+    @Column private int  driver_hour;
 
-    public int getBooking_id() {
+
+    public Integer getBooking_id() {
         return booking_id;
     }
 
@@ -47,7 +50,5 @@ public class Booking {
         this.driver_hour = driver_hour;
     }
 
-    @Column private int  driver_time;
-    @Column private int  driver_hour;
 
 }
