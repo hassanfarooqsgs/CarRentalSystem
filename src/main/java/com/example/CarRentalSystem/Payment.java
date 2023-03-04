@@ -10,7 +10,7 @@ import lombok.Data;
 public class Payment {
     @Id  @Column (name="payment_id")
     private int paymentId;
-
+//Done
     @Column (name="payment_type")
     private String paymentType;
     @Column (name="total_amount")
