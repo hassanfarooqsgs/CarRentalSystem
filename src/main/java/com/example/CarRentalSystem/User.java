@@ -11,7 +11,7 @@ import lombok.Data;
 @Table(name="user")
 
 
-public class userr {
+public class User {
    @Id @Column int user_id;
     @Column String user_name;
     @Column String user_email;
