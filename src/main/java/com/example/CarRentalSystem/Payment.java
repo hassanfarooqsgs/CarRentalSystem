@@ -10,8 +10,7 @@ import lombok.Data;
 public class Payment {
     @Id  @Column (name="payment_id")
     private int paymentId;
-    @OneToOne @JoinColumn(name = "booding_id")
-    private Booking bookingid;
+
     @Column (name="payment_type")
     private String paymentType;
     @Column (name="total_amount")
@@ -20,4 +19,7 @@ public class Payment {
     private int advanceAmount;
     @Column (name="balance_amount")
     private int balanceAmount;
+
+    @OneToOne @JoinColumn(name = "booding_id")
+    private Booking bookingid;
 }
