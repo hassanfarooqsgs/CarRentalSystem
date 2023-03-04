@@ -1,23 +1,30 @@
 package com.example.CarRentalSystem;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 @Data
 @Entity
-@Table(name="Booking")
+@Table(name="booking")
 public class Booking {
 
     @Id
-    @Column
-    private Integer booking_id;
-    @Column  private String  booking_date;
-    @Column private Integer  driver_time;
-    @Column private int  driver_hour;
+    @Column(name ="booking_id")
+    private Integer bookingId;
+    @ManyToOne @JoinColumn (name = "car_id")
+    private Car carId;
+    @OneToOne @JoinColumn(name = "payment_id")
+    private Payment paymentid;
+    @ManyToOne @JoinColumn(name = "user_id")
+    private User userid;
 
+    @Column  (name ="booking_date")
+    private String  bookingDate;
+    @Column (name ="booking_hour")
+    private int  driverHour;
+
+    @Column (name ="isdriver_require")
+    private boolean isDriverRequired;
 
 
     }

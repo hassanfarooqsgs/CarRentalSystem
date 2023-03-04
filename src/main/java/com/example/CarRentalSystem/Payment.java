@@ -1,18 +1,23 @@
 package com.example.CarRentalSystem;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table (name="Transactiondetails")
 public class Payment {
-    @Id  @Column private int payment_id;
-    @Column private String payment_type;
-    @Column private int payment_amount;
-
+    @Id  @Column (name="payment_id")
+    private int paymentId;
+    @OneToOne @JoinColumn(name = "booding_id")
+    private Booking bookingid;
+    @Column (name="payment_type")
+    private String paymentType;
+    @Column (name="total_amount")
+    private int totalAmount;
+    @Column (name = "advance_amount")
+    private int advanceAmount;
+    @Column (name="balance_amount")
+    private int balanceAmount;
 }

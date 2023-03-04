@@ -1,10 +1,9 @@
 package com.example.CarRentalSystem;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -12,9 +11,18 @@ import lombok.Data;
 
 
 public class User {
-   @Id @Column int user_id;
-    @Column String user_name;
-    @Column String user_email;
-    @Column int user_phn;
-    @Column String user_address;
+   @Id @Column (name="user_id")
+   private int userId;
+   @OneToMany @JoinColumn(name = "booking_id")
+   private List<Booking>bookingList;
+    @Column (name="user_name")
+    private String userName;
+    @Column (name="user_email")
+    private String userEmail;
+    @Column (name="user_phn")
+    private int userPhn;
+    @Column (name="user_address")
+    private String userAddress;
+    @Column (name="user_type")
+    private String userType;
 }
