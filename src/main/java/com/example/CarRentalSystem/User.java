@@ -11,10 +11,11 @@ import java.util.List;
 
 
 public class User {
+    @OneToMany @JoinColumn(name = "booking_id")
+    private List<Booking>bookingList;
    @Id @Column (name="user_id")
    private int userId;
-   @OneToMany @JoinColumn(name = "booking_id")
-   private List<Booking>bookingList;
+
     @Column (name="user_name")
     private String userName;
     @Column (name="user_email")

@@ -8,15 +8,16 @@ import lombok.Data;
 @Table(name="booking")
 public class Booking {
 
-    @Id
-    @Column(name ="booking_id")
-    private Integer bookingId;
     @ManyToOne @JoinColumn (name = "car_id")
     private Car carId;
     @OneToOne @JoinColumn(name = "payment_id")
     private Payment paymentid;
     @ManyToOne @JoinColumn(name = "user_id")
     private User userid;
+
+    @Id
+    @Column(name ="booking_id")
+    private Integer bookingId;
 
     @Column  (name ="booking_date")
     private String  bookingDate;

@@ -4,10 +4,14 @@ package com.example.CarRentalSystem;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
 @Table (name="Transactiondetails")
 public class Payment {
+    @OneToOne @JoinColumn(name = "booding_id")
+    private Booking bookingid;
     @Id  @Column (name="payment_id")
     private int paymentId;
 //Done
@@ -20,6 +24,8 @@ public class Payment {
     @Column (name="balance_amount")
     private int balanceAmount;
 
-    @OneToOne @JoinColumn(name = "booding_id")
-    private Booking bookingid;
+    @Column(name="payment_date")
+    private Date paymentDate;
+
+
 }
