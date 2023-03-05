@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 @Table (name="Transactiondetails")
 public class Payment {
-    @OneToOne @JoinColumn(name = "booding_id")
+    @OneToOne @JoinColumn(name = "booking_id")
     private Booking bookingid;
     @Id  @Column (name="payment_id")
     private int paymentId;
