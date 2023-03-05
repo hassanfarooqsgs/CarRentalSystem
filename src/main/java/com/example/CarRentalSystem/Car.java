@@ -9,12 +9,22 @@ import java.util.List;
 @Table(name = "rentalcar")
 
 public class Car {
+    //@Embedded To reuse same data member in other class.
+    @Transient//Does not load member or generate column in database
+    @Column (name ="k")
+    private String k;
     @Id @Column (name ="car_id")
     private String regNo;
     @Column (name ="car_ownerid")
     private String ownerId;
+
+    @Transient
+    @Column (name ="y")
+    private String trans;
+
     @Column (name ="car_model")
     private String carModel;
+
     @Column (name ="car_name")
     private String carName;
     @Column (name ="car_color")
