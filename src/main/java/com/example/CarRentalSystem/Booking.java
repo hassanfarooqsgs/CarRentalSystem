@@ -3,9 +3,12 @@ package com.example.CarRentalSystem;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.stereotype.Component;
+
 @Data
 @Entity
 @Table(name="booking")
+@Component
 public class Booking {
 
     @ManyToOne @JoinColumn (name = "car_id")
@@ -15,6 +18,7 @@ public class Booking {
     @ManyToOne @JoinColumn(name = "user_id")
     private User userid;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name ="booking_id")
     private Integer bookingId;

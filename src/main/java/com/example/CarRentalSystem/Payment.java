@@ -12,7 +12,9 @@ import java.util.Date;
 public class Payment {
     @OneToOne @JoinColumn(name = "booking_id")
     private Booking bookingid;
-    @Id  @Column (name="payment_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column (name="payment_id")
     private int paymentId;
 //Done
     @Column (name="payment_type")

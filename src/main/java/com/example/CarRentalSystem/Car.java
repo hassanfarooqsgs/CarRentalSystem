@@ -1,26 +1,28 @@
 package com.example.CarRentalSystem;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "rentalcar")
-
+@Component
 public class Car {
     //@Embedded To reuse same data member in other class.
-    @Transient//Does not load member or generate column in database
-    @Column (name ="k")
-    private String k;
-    @Id @Column (name ="car_id")
-    private String regNo;
-    @Column (name ="car_ownerid")
-    private String ownerId;
-
+  //  @Transient//Does not load member or generate column in database
     @Transient
     @Column (name ="y")
     private String trans;
+    @Column (name ="k")
+    private String k;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column (name ="car_id")
+    private String regNo;
+    @Column (name ="car_ownerid")
+    private String ownerId;
 
     @Column (name ="car_model")
     private String carModel;
