@@ -13,7 +13,7 @@ public class Booking {
 
     @ManyToOne @JoinColumn (name = "car_id")
     private Car carId;
-    @OneToOne @JoinColumn(name = "payment_id")
+    @OneToOne
     private Payment paymentid;
     @ManyToOne @JoinColumn(name = "user_id")
     private User userid;

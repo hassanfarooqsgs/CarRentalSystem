@@ -12,16 +12,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BookingController {
 
-    @Autowired
-    BookingService bookingService;
-@PostMapping("/bookingconfirm")
-    private String ConfirmBooking(@RequestBody Booking booking){
-    bookingService.confirmBooking(booking);
-
-
-    return booking.getBookingId();
-}
-
-
-
 }

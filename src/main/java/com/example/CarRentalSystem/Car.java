@@ -15,12 +15,9 @@ public class Car {
     @Transient
     @Column (name ="y")
     private String trans;
-    @Column (name ="k")
-    private String k;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column (name ="car_id")
-    private String regNo;
+    private String carId;
     @Column (name ="car_ownerid")
     private String ownerId;
 
@@ -35,12 +32,8 @@ public class Car {
     private String carStatus;
     @Column (name ="car_price")
     private int carPrice;
-    @Column (name ="car_pickup")
-    private String pickUp;
-    @Column (name ="car_destination")
-    private String destination;
 
-    @OneToMany @JoinColumn (name = "booking_id")
+    @OneToMany
     private List<Booking>bookingList;
 
 }

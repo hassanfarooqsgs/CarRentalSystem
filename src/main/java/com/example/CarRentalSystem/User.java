@@ -8,10 +8,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name="user")
-
-
 public class User {
-    @OneToMany @JoinColumn(name = "booking_id")
+    @OneToMany
     private List<Booking>bookingList;
    @Id @Column (name="user_id")
    private int userId;

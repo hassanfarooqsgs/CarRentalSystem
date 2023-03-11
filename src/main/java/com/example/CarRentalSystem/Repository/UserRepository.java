@@ -1,9 +1,11 @@
 package com.example.CarRentalSystem.Repository;
 
-import com.example.CarRentalSystem.Car;
+import com.example.CarRentalSystem.User;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CarRepository extends CrudRepository<Car,String>
+public interface UserRepository extends CrudRepository<User,Integer>
+
 {
 
 }
+
