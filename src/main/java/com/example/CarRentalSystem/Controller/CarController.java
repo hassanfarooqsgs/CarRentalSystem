@@ -1,5 +1,6 @@
 package com.example.CarRentalSystem.Controller;
 import com.example.CarRentalSystem.Car;
+import com.example.CarRentalSystem.Model.CarModel;
 import com.example.CarRentalSystem.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,10 +15,8 @@ public class CarController {
     @Autowired
     CarService carService;
     @PostMapping("/car")
-    private String savedetails(@RequestBody Car car){
-        carService.save(car);
-        return car.getCarId();
-
+    private CarModel savedetails(@RequestBody CarModel carModel){
+        return carService.save(carModel);
 
     }
 }
